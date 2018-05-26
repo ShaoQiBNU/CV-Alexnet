@@ -1,4 +1,4 @@
-alexnet.py为alexnet的模型重现，输入数据为227*227*3。 
+alexnet.py为alexnet的模型重现，输入数据为227-227-3。 
 ================================================
 
 alexnet_MNIST.py 和 alexnet_MNIST2.py为利用Alexnet实现MNIST，第一层卷积和最后一层全连接层的参数做了调整，为了适应MNIST。
