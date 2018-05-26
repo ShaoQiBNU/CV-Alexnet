@@ -3,7 +3,7 @@ import tensorflow as tf
 
 ##################### load data ##########################
 '''
-导入自己的数据，此处设置数据为227*227，为了与alexnet的输入保持一致
+导入自己的数据，此处设置数据为227*227*3，为了与alexnet的输入保持一致
 '''
 
 ########## set net hyperparameters ##########
@@ -13,11 +13,9 @@ batch_size=128
 display_step=10
 
 ########## set net parameters ##########
-#### img shape:28*28
-n_input=784 
 
-#### 0-9 digits
-n_classes=10
+#### classes
+n_classes=1000
 
 #### dropout probability
 dropout=0.75
@@ -45,14 +43,14 @@ def norm(name, l_input, lsize=4):
 
 ########## set net parameters ##########
 weights={
-	'wc1': tf.Variable(tf.random_normal([11,11,1,96])),
+	'wc1': tf.Variable(tf.random_normal([11,11,3,96])),
 	'wc2': tf.Variable(tf.random_normal([5,5,96,256])),
 	'wc3': tf.Variable(tf.random_normal([3,3,256,384])),
 	'wc4': tf.Variable(tf.random_normal([3,3,384,384])),
 	'wc5': tf.Variable(tf.random_normal([3,3,384,256])),
 	'wd1': tf.Variable(tf.random_normal([6*6*256,4096])),
 	'wd2': tf.Variable(tf.random_normal([4096,4096])),
-	'out': tf.Variable(tf.random_normal([4096,10]))
+	'out': tf.Variable(tf.random_normal([4096,1000]))
 }
 biases={
 	'bc1': tf.Variable(tf.random_normal([96])),
@@ -70,7 +68,7 @@ biases={
 ########## define net structure ##########
 def alex_net(x, weights, biases, dropout):
 	#### reshape input picture ####
-	x=tf.reshape(x, shape=[-1,227,227,1])
+	x=tf.reshape(x, shape=[-1,227,227,3])
 
 	#### 1 conv ####
 	## conv ##
