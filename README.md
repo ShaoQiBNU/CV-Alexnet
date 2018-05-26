@@ -1,4 +1,4 @@
-alexnet.py为alexnet的模型重现，输入数据为227*227*3。 alexnet_MNIST.py 和 alexnet_MNIST2.py为利用Alexnet实现MNIST，第一层卷积和最后一层全连接层的参数做了调整，为了适应MNIST。
+alexnet.py为alexnet的模型重现，输入数据为227*2273。 alexnet_MNIST.py 和 alexnet_MNIST2.py为利用Alexnet实现MNIST，第一层卷积和最后一层全连接层的参数做了调整，为了适应MNIST。
 ===========================================================================================================================
 
 # 一. 利用Alexnet的5层卷积结构实现MNIST识别（注意：层数传递时影像的大小很重要，直接决定网络是否正确）
