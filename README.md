@@ -16,7 +16,7 @@ alexnet_MNIST.py 和 alexnet_MNIST2.py为利用Alexnet实现MNIST，第一层卷
 
 		对于VALID，the output height and width are computed as:
 
-		out_height = ceil(float(in_height - filter_height + 1) / float(strides1))
+		out_height = ceil(float(in_height - filter_height + 1) / float(strides[1]))
 
 		out_width = ceil(float(in_width - filter_width + 1) / float(strides[2]))
 
