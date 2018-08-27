@@ -17,7 +17,6 @@ Alexnet网络详解
 
 > 局部归一化，在Relu之后采用，主要为了提高模型的泛化能力。lrn层的公式如下，参数设置如下：k=2，n=5，α=10^(-4)，β=0.75。现在模型中更常用Batch Normalization。
 
-Image
 
 ## (三) Overlapping Pooling
 > 重叠池化，传统CNN的pool层中，ksize和stride都相同，但论文训练发现，当stride<ksize时，模型更难过拟合，因此论文采用的maxpool层的参数设置为：ksize=3，stride=2
@@ -30,6 +29,10 @@ Image
 # 三. 网络结构
 
 > 网络结构如图所示：
+
+![image](https://github.com/ShaoQiBNU/Alexnet/blob/master/images/1.png)
+
+![image](https://github.com/ShaoQiBNU/Alexnet/blob/master/images/2.png)
 
 # 四. 代码
 > 采用Alexnet模型对MNIST数据集进行分类判别，由于MNIST影像大小为28 x 28，所以网络结构做了相应调整，从而适应数据，代码如下：
